@@ -1,0 +1,30 @@
+:root {
+  --gallery-gap: 1.375rem;
+  --gallery-gap-large: 2.5rem;
+  --gallery-min-column-width: 350px;
+}
+
+.gallery {
+  display: grid;
+  gap: var(--gallery-gap);
+}
+@media (min-width: 48rem) {
+  .gallery {
+    gap: var(--gallery-gap-large);
+    grid-template-columns: repeat(auto-fill, minmax(var(--gallery-min-column-width), 1fr));
+  }
+}
+
+.content {
+  display: grid;
+  gap: 2.5rem;
+  align-content: start;
+}
+
+@media (min-width: 48rem) {
+  .logements {
+    padding: 2.5rem;
+    background-color: #f6f6f6;
+    border-radius: 1.567rem;
+  }
+}/*# sourceMappingURL=home.css.map */

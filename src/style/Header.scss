@@ -1,0 +1,47 @@
+@import './variables.scss';
+
+:root {
+    --header-logo-width-min: 8rem;
+    --header-logo-width-max: 13rem;
+    --header-logo-width-viewport: 25vw;
+    --nav-gap: clamp(1.5rem, 5vw, 2.5rem);
+    --nav-link-font-size: clamp(0.75rem, 2vw, 1.25rem);
+    --nav-link-active-underline-offset: 0.25em;
+}
+
+// Styles for the Header component
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    // Styles for the logo inside the Header
+    &__logo {
+        // Use clamp() to responsively size the logo
+        width: clamp(
+            var(--header-logo-width-min),
+            var(--header-logo-width-viewport),
+            var(--header-logo-width-max)
+        );
+    }
+}
+.nav {
+    display: flex;
+    align-items: center;
+    gap: var(--nav-gap);
+
+    // Styles for the links inside the Nav
+    &__link {
+        font-size: var(--nav-link-font-size); // Responsive font size
+        text-transform: uppercase;
+        @media (min-width: $breakpoint-medium) {
+            text-transform: none;
+        }
+    }
+
+    // Styles for the active link inside the Nav
+    &__link.active {
+        text-decoration: underline;
+        text-underline-offset: var(--nav-link-active-underline-offset);
+    }
+}

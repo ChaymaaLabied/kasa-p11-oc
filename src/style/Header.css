@@ -1,0 +1,36 @@
+:root {
+  --header-logo-width-min: 8rem;
+  --header-logo-width-max: 13rem;
+  --header-logo-width-viewport: 25vw;
+  --nav-gap: clamp(1.5rem, 5vw, 2.5rem);
+  --nav-link-font-size: clamp(0.75rem, 2vw, 1.25rem);
+  --nav-link-active-underline-offset: 0.25em;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__logo {
+  width: clamp(var(--header-logo-width-min), var(--header-logo-width-viewport), var(--header-logo-width-max));
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--nav-gap);
+}
+.nav__link {
+  font-size: var(--nav-link-font-size);
+  text-transform: uppercase;
+}
+@media (min-width: 48rem) {
+  .nav__link {
+    text-transform: none;
+  }
+}
+.nav__link.active {
+  text-decoration: underline;
+  text-underline-offset: var(--nav-link-active-underline-offset);
+}/*# sourceMappingURL=header.css.map */
