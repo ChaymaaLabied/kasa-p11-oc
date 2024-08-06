@@ -13,7 +13,6 @@ export default function Details() {
       .then((response) => response.json())
       .then((data) => {
         const logement = data.find((elt) => elt.id === id);
-        console.log("logement", logement);
         if (!logement) {
           throw new Error("Property not found");
         }
@@ -33,8 +32,8 @@ export default function Details() {
           </div>
           <p>{logementData.location}</p>
           <div>
-            {logementData.tags.map((tag) => (
-              <span className="tag mx-2">{tag}</span>
+            {logementData.tags.map((tag, index) => (
+              <span key={index} className="tag mx-2">{tag}</span>
             ))}
           </div>
           <div className="d-flex justify-content-between">

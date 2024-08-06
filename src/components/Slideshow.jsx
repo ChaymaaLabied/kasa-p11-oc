@@ -19,7 +19,7 @@ export default function Slideshow({ pictures }) {
     <div className="m-auto text-center">
       <div className="slideshow d-flex justify-content-column">
         <button onClick={goToPrevious}>{"<"} </button>
-        <img src={pictures[pictureIndex]} alt="" />
+        <img src={pictures[pictureIndex]} alt=""/>
         <button onClick={goToNext}>{">"}</button>
       </div>
       {`${pictureIndex + 1}/${pictures.length}`}
