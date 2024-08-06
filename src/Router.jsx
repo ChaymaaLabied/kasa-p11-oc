@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
 import NotFound from "./pages/404";
 import About from "./pages/About";
-// import Details from "./pages/Details";
+import Details from "./pages/Details";
 import Home from "./pages/Home";
 
 export default function Router() {
@@ -20,10 +20,10 @@ export default function Router() {
           path: "/about",
           element: <About />,
         },
-        // {
-        //   path: "/:id/details",
-        //   element: <Details />,
-        // },
+        {
+          path: "/:id/details",
+          element: <Details />,
+        },
         {
           path: "*",
           element: <NotFound />,
@@ -34,10 +34,10 @@ export default function Router() {
         },
       ],
     },
-    // {
-    //   path: "*",
-    //   element: <NotFound />,
-    // },
+    {
+      path: "*",
+      element: <NotFound />,
+    },
   ]);
 
   return <RouterProvider router={router} />;

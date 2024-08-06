@@ -24,7 +24,6 @@ export default function Details() {
 
   return (
     <div className="details">
-      <p>Logement id: {id}</p>
       {logementData && (
         <>
           <Slideshow pictures={logementData.pictures} />
