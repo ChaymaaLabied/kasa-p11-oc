@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
 // import NotFound from "./pages/404";
-// import About from "./pages/About";
+import About from "./pages/About";
 // import Details from "./pages/Details";
 import Home from "./pages/Home";
 
@@ -16,10 +16,10 @@ export default function Router() {
           path: "/",
           element: <Home />,
         },
-        // {
-        //   path: "/about",
-        //   element: <About />,
-        // },
+        {
+          path: "/about",
+          element: <About />,
+        },
         // {
         //   path: "/:id/details",
         //   element: <Details />,

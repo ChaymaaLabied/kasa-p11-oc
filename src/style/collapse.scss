@@ -1,0 +1,78 @@
+@import "./variables.scss";
+
+:root {
+  --collapse-padding: 0.625rem;
+  --collapse-title-size: 0.812rem;
+  --collapse-content-size: 0.875rem;
+  --collapse-icon-size: 1.5em;
+  --collapse-background-color: #{$color-neutral-100};
+  --collapse-border-radius: #{$radius-small};
+  --collapse-title-background-color: #{$color-primary};
+  --collapse-title-color: #{$color-neutral-0};
+  --collapse-title-weight: 700;
+
+  @media (min-width: $breakpoint-medium) {
+    --collapse-padding: 0.875rem 1rem;
+    --collapse-title-size: 1.125rem;
+    --collapse-content-size: 1rem;
+  }
+}
+@keyframes itemApp {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.collapse {
+  background-color: var(--collapse-background-color);
+  border-radius: var(--collapse-border-radius);
+  overflow: hidden;
+  width: 100%;
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--collapse-title-background-color);
+    color: var(--collapse-title-color);
+    font-size: var(--collapse-title-size);
+    font-weight: var(--collapse-title-weight);
+    padding: var(--collapse-padding);
+    cursor: pointer;
+  }
+
+  &__arrowIcon {
+    content: "";
+    height: var(--accordion-icon-size);
+    width: var(--accordion-icon-size);
+    transition: transform 0.7s;
+  }
+
+  &__content {
+    font-size: var(--collapse-content-size);
+    padding: var(--collapse-padding);
+
+    p:first-of-type {
+      margin-block-start: 0;
+    }
+  }
+
+  &.is-open {
+    
+    .collapse__arrowIcon {
+      transform: rotate(180deg);
+    }
+    .collapse__content {
+      //   transition: font-size 0.1s, max-height 0.5s, padding-top 0.5s,
+      //     padding-bottom 0.5s, margin-bottom 0.5s;
+      /*animation des cartes */
+        animation: itemApp 700ms;
+        animation-timing-function: ease-in-out;
+    }
+  }
+}

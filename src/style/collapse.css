@@ -1,0 +1,67 @@
+:root {
+  --collapse-padding: 0.625rem;
+  --collapse-title-size: 0.812rem;
+  --collapse-content-size: 0.875rem;
+  --collapse-icon-size: 1.5em;
+  --collapse-background-color: #f6f6f6;
+  --collapse-border-radius: 0.625rem;
+  --collapse-title-background-color: #ff6060;
+  --collapse-title-color: #fff;
+  --collapse-title-weight: 700;
+}
+@media (min-width: 48rem) {
+  :root {
+    --collapse-padding: 0.875rem 1rem;
+    --collapse-title-size: 1.125rem;
+    --collapse-content-size: 1rem;
+  }
+}
+
+@keyframes itemApp {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.collapse {
+  background-color: var(--collapse-background-color);
+  border-radius: var(--collapse-border-radius);
+  overflow: hidden;
+  width: 100%;
+}
+.collapse__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--collapse-title-background-color);
+  color: var(--collapse-title-color);
+  font-size: var(--collapse-title-size);
+  font-weight: var(--collapse-title-weight);
+  padding: var(--collapse-padding);
+  cursor: pointer;
+}
+.collapse__arrowIcon {
+  content: "";
+  height: var(--accordion-icon-size);
+  width: var(--accordion-icon-size);
+  transition: transform 0.7s;
+}
+.collapse__content {
+  font-size: var(--collapse-content-size);
+  padding: var(--collapse-padding);
+}
+.collapse__content p:first-of-type {
+  margin-block-start: 0;
+}
+.collapse.is-open .collapse__arrowIcon {
+  transform: rotate(180deg);
+}
+.collapse.is-open .collapse__content {
+  /*animation des cartes */
+  animation: itemApp 700ms;
+  animation-timing-function: ease-in-out;
+}/*# sourceMappingURL=collapse.css.map */
