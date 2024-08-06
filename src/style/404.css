@@ -48,7 +48,7 @@ ul[class] {
   margin: 0;
 }
 
-a {
+a[class] {
   text-decoration: none;
   color: inherit;
 }
@@ -82,4 +82,16 @@ svg {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
-}/*# sourceMappingURL=index.css.map */
+}
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6.5rem;
+  height: 100%;
+}
+.notFound img {
+  width: min(100%, 36rem);
+}/*# sourceMappingURL=404.css.map */

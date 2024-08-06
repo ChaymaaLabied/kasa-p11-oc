@@ -1,0 +1,15 @@
+@import "../style/variables.scss";
+@import"../index.scss";
+
+.notFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-ExtraLarge;
+    height: 100%;
+
+    img {
+        width: min(100%, 36rem);
+    }
+}
