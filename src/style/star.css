@@ -1,0 +1,15 @@
+.star {
+  width: 20px;
+  height: 20px;
+  mask: url("../assets/star.png") no-repeat center;
+  -webkit-mask: url("../assets/star.png") no-repeat center;
+  background-color: transparent;
+}
+
+.star.active {
+  background-color: var(--active-color);
+}
+
+.star.muted {
+  background-color: var(--muted-color);
+}/*# sourceMappingURL=star.css.map */

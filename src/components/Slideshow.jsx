@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import "../style/slideshow.scss";
+import prevBtn from "../assets/arrow-left.png";
+import nextBtn from "../assets/arrow-right.png";
 
 export default function Slideshow({ pictures }) {
   const [pictureIndex, setPictureIndex] = useState(0);
@@ -16,13 +19,29 @@ export default function Slideshow({ pictures }) {
   };
 
   return (
-    <div className="m-auto text-center">
-      <div className="slideshow d-flex justify-content-column">
-        <button onClick={goToPrevious}>{"<"} </button>
-        <img src={pictures[pictureIndex]} alt=""/>
-        <button onClick={goToNext}>{">"}</button>
-      </div>
-      {`${pictureIndex + 1}/${pictures.length}`}
+    <div className="slideshow">
+      <img src={pictures[pictureIndex]} alt="" className="slideshow__image" />
+      {pictures.length > 1 && (
+        <div className="slideshow__nav">
+          <button
+            onClick={goToPrevious}
+            className="slideshow__nav-prev"
+            aria-label="previous"
+          >
+            <img src={prevBtn} alt="previous_btn" />
+          </button>
+          <button
+            onClick={goToNext}
+            className="slideshow__nav-next"
+            aria-label="next"
+          >
+            <img src={nextBtn} alt="next_btn" />
+          </button>
+          <div className="slideshow__pagination">{`${pictureIndex + 1}/${
+            pictures.length
+          }`}</div>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,0 +1,104 @@
+@import "../style/variables.scss";
+
+:root {
+    --tag-list-gap: 0.5rem;
+    --tag-list-margin-block: 0.5rem;
+    --tag-padding: 0.15rem 0.75rem;
+    --tag-font-size: 0.875rem;
+    --tag-border-radius: 100vmax;
+    --tag-background-color: #{$color-primary};
+    --tag-color: #{$color-neutral-0};
+}
+
+
+
+.details {
+    display: grid;
+    gap: $spacing-medium;
+    align-items: start;
+    grid-auto-rows: min-content;
+
+    // Summary
+    &__summary {
+        display: flex;
+        gap: $spacing-small;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @media (min-width: $breakpoint-medium) {
+            flex-direction: row;
+        }
+    }
+
+    &__infos {
+        display: flex;
+        gap: $spacing-small;
+        justify-content:space-around;
+        flex-direction: row;
+        align-items: center;
+
+        @media (min-width: $breakpoint-medium) {
+            flex-direction: column-reverse;
+            align-items: end;
+        }
+    }
+
+    &__title,
+    &__location {
+        margin: 0;
+    }
+
+    &__title {
+        margin-block-end: $spacing-small;
+        font-size: clamp(1.125rem, 5vw, 2.25rem);
+        font-weight: 500;
+        line-height: 1.1;
+    }
+
+    &__location {
+        font-size: clamp(0.875rem, 10vw, 1.125rem);
+        line-height: 1.2;
+        color: $color-neutral-900;
+        margin-block-end: $spacing-medium;
+    }
+
+    &__tags {
+        width: max-content;
+    }
+
+    &__collapse {
+        display: flex;
+        gap: $spacing-medium;
+        flex-direction: column;
+        align-items: start;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+        }
+    }
+
+    .banner__image {
+        width: 100%;
+        aspect-ratio: 1240 / 415;
+        object-fit: cover;
+        border-radius: $radius-large;
+    }
+}
+
+// Styles for the TagList
+.tagList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--tag-list-gap);
+    margin-block: var(--tag-list-margin-block);
+
+    // Styles for the tag inside the TagList
+    .tag {
+        display: inline-block;
+        background-color: var(--tag-background-color);
+        color: var(--tag-color);
+        padding: var(--tag-padding);
+        font-size: var(--tag-font-size);
+        border-radius: var(--tag-border-radius);
+    }
+}

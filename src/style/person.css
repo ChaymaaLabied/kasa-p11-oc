@@ -1,0 +1,41 @@
+:root {
+  --avatar-size: 2rem;
+  --avatar-spacing: 0.625rem;
+  --avatar-font-size: clamp(0.875rem, 2vw, 1.125rem);
+  --avatar-color-text: #ff6060;
+}
+@media (min-width: 48rem) {
+  :root {
+    --avatar-size: 4rem;
+    --avatar-spacing: 0.625rem;
+  }
+}
+
+.person {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: end;
+  gap: var(--avatar-spacing);
+  margin: 0;
+  color: var(--avatar-color-text);
+}
+.person__name {
+  flex: 0;
+  text-align: end;
+  font-size: var(--avatar-font-size);
+  font-weight: 500;
+  line-height: 1.1;
+}
+.person__avatar {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.rating {
+  display: flex;
+  gap: 12px;
+}/*# sourceMappingURL=person.css.map */
