@@ -1,17 +1,17 @@
 import React from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../style/home/card.scss";
 
 export default function Card({ title, imageUrl, id }) {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // const handleClick = () => {
-  //   navigate(`/${id}/details`);
-  // };
+  const handleClick = () => {
+    navigate(`/${id}/details`);
+  };
 
   return (
-    <Link to={`/${id}/details`} className="card__link">
+    <Link  onClick={handleClick} className="card__link">
       <img
         className="card__cover"
         src={imageUrl}
