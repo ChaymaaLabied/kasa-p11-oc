@@ -9,6 +9,7 @@ import "../style/person.scss";
 export default function Details() {
   let { id } = useParams();
 
+  
   const [logementData, setLogementData] = useState(null);
 
   useEffect(() => {
