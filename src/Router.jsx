@@ -5,6 +5,7 @@ import NotFound from "./pages/404";
 import About from "./pages/About";
 import Details from "./pages/Details";
 import Home from "./pages/Home";
+import { detailsLoader } from "./loaders/detailsLoader";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -12,10 +13,10 @@ export default function Router() {
       path: "/",
       element: <Layout />,
       children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
+        // {
+        //   path: "/",
+        //   element: <Home />,
+        // },
         {
           path: "/about",
           element: <About />,
@@ -23,6 +24,8 @@ export default function Router() {
         {
           path: "/:id/details",
           element: <Details />,
+          loader: detailsLoader,
+          errorElement: <NotFound />,
         },
         {
           path: "*",
@@ -34,10 +37,10 @@ export default function Router() {
         },
       ],
     },
-    {
-      path: "*",
-      element: <NotFound />,
-    },
+    // {
+    //   path: "*",
+    //   element: <NotFound />,
+    // },
   ]);
 
   return <RouterProvider router={router} />;

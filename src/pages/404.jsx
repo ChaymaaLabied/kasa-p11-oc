@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <div className="notFound">
       <img src={error404} alt="404" />
-      <h1 className="mt-5 error-page-text">
+      <h1>
         Oups! La page que vous demandez n'existe pas.
       </h1>
       <p>
