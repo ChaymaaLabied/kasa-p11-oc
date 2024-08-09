@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import error404 from "../assets/404.svg";
 import "../style/404.scss";
 
@@ -11,7 +11,7 @@ export default function NotFound() {
         Oups! La page que vous demandez n'existe pas.
       </h1>
       <p>
-        <Link to="/">Retourner sur la page d'accueil</Link>
+        <NavLink to="/">Retourner sur la page d'accueil</NavLink>
       </p>
     </div>
   );

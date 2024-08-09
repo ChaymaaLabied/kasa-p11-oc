@@ -6,6 +6,7 @@ import Rating from "../components/StarRating";
 import "../style/details.scss";
 import "../style/person.scss";
 
+
 export default function Details() {
   const { logement } = useLoaderData();
 

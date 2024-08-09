@@ -21,6 +21,7 @@ body {
   gap: 2.375rem;
   padding-block-start: 2.375rem;
   min-height: calc(100svh - 2.375rem);
+  width: 100%;
 }
 
 /* Heading Styles */

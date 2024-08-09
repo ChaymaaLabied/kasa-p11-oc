@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../style/slideshow.scss";
-import prevBtn from "../assets/arrow-left.png";
-import nextBtn from "../assets/arrow-right.png";
+import Chevron from "../components/Chevron";
 
 export default function Slideshow({ pictures }) {
   const [pictureIndex, setPictureIndex] = useState(0);
@@ -28,14 +27,14 @@ export default function Slideshow({ pictures }) {
             className="slideshow__nav-prev"
             aria-label="previous"
           >
-            <img src={prevBtn} alt="previous_btn" />
+            <Chevron direction="left" />
           </button>
           <button
             onClick={goToNext}
             className="slideshow__nav-next"
             aria-label="next"
           >
-            <img src={nextBtn} alt="next_btn" />
+           <Chevron direction="right" />
           </button>
           <div className="slideshow__pagination">{`${pictureIndex + 1}/${
             pictures.length

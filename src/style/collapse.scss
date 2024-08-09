@@ -4,7 +4,7 @@
   --collapse-padding: 0.625rem;
   --collapse-title-size: 0.812rem;
   --collapse-content-size: 0.875rem;
-  --collapse-icon-size: 1.5em;
+  --collapse-icon-size: 1.5rem;
   --collapse-background-color: #{$color-neutral-100};
   --collapse-border-radius: #{$radius-small};
   --collapse-title-background-color: #{$color-primary};
@@ -17,17 +17,6 @@
     --collapse-content-size: 1rem;
   }
 }
-@keyframes itemApp {
-  0% {
-    transform: translateY(-10px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-
 .collapse {
   background-color: var(--collapse-background-color);
   border-radius: var(--collapse-border-radius);
@@ -44,35 +33,34 @@
     font-weight: var(--collapse-title-weight);
     padding: var(--collapse-padding);
     cursor: pointer;
+
+    &::after {
+      content: "";
+      height: var(--collapse-icon-size);
+      width: var(--collapse-icon-size);
+      background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 512 512'><path fill='white' d='M278.6 105.4c-12.5-12.5-32.8-12.5-45.3 0l-192 192c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L256 173.3l169.4 169.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-192-192z'/></svg>");
+      background-size: contain;
+      background-position: center;
+      transition: transform 0.5s ease;
+    }
   }
 
-  &__arrowIcon {
-    content: "";
-    height: var(--accordion-icon-size);
-    width: var(--accordion-icon-size);
-    transition: transform 0.7s;
+  &.is-open .collapse__title::after {
+    transform: rotate(-180deg);
   }
 
   &__content {
     font-size: var(--collapse-content-size);
-    padding: var(--collapse-padding);
-
-    p:first-of-type {
-      margin-block-start: 0;
-    }
+    max-height: 0; /* Initial height when collapsed */
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(-10px); /* Slightly slide up when collapsed */
   }
 
-  &.is-open {
-    
-    .collapse__arrowIcon {
-      transform: rotate(180deg);
-    }
-    .collapse__content {
-      //   transition: font-size 0.1s, max-height 0.5s, padding-top 0.5s,
-      //     padding-bottom 0.5s, margin-bottom 0.5s;
-      /*animation des cartes */
-        animation: itemApp 700ms;
-        animation-timing-function: ease-in-out;
-    }
+  &.is-open .collapse__content {
+    max-height: 500px; /* Large enough value to contain the content, adjust if needed */
+    opacity: 1;
+    transform: translateY(0); /* Slide down to original position */
   }
 }

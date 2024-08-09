@@ -12,4 +12,7 @@
     img {
         width: min(100%, 36rem);
     }
+    p:hover {
+        text-decoration: underline;
+    }
 }

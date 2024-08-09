@@ -48,6 +48,16 @@
   transform: scale3d(1.1, 1.1, 1);
   filter: drop-shadow(var(--slideshow-text-shadow-hover));
 }
+@media (max-width: 48rem) {
+  .slideshow__nav-prev, .slideshow__nav-next {
+    width: 4rem;
+  }
+}
+@media (max-width: 30rem) {
+  .slideshow__nav-prev, .slideshow__nav-next {
+    width: 3rem;
+  }
+}
 .slideshow__nav-prev {
   place-content: center start;
 }

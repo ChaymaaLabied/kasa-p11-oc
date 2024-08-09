@@ -2,7 +2,7 @@
   --collapse-padding: 0.625rem;
   --collapse-title-size: 0.812rem;
   --collapse-content-size: 0.875rem;
-  --collapse-icon-size: 1.5em;
+  --collapse-icon-size: 1.5rem;
   --collapse-background-color: #f6f6f6;
   --collapse-border-radius: 0.625rem;
   --collapse-title-background-color: #ff6060;
@@ -17,16 +17,6 @@
   }
 }
 
-@keyframes itemApp {
-  0% {
-    transform: translateY(-10px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
 .collapse {
   background-color: var(--collapse-background-color);
   border-radius: var(--collapse-border-radius);
@@ -44,24 +34,28 @@
   padding: var(--collapse-padding);
   cursor: pointer;
 }
-.collapse__arrowIcon {
+.collapse__title::after {
   content: "";
-  height: var(--accordion-icon-size);
-  width: var(--accordion-icon-size);
-  transition: transform 0.7s;
+  height: var(--collapse-icon-size);
+  width: var(--collapse-icon-size);
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 512 512'><path fill='white' d='M278.6 105.4c-12.5-12.5-32.8-12.5-45.3 0l-192 192c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L256 173.3l169.4 169.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-192-192z'/></svg>");
+  background-size: contain;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+.collapse.is-open .collapse__title::after {
+  transform: rotate(-180deg);
 }
 .collapse__content {
   font-size: var(--collapse-content-size);
-  padding: var(--collapse-padding);
-}
-.collapse__content p:first-of-type {
-  margin-block-start: 0;
-}
-.collapse.is-open .collapse__arrowIcon {
-  transform: rotate(180deg);
+  max-height: 0; /* Initial height when collapsed */
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(-10px); /* Slightly slide up when collapsed */
 }
 .collapse.is-open .collapse__content {
-  /*animation des cartes */
-  animation: itemApp 700ms;
-  animation-timing-function: ease-in-out;
+  max-height: 500px; /* Large enough value to contain the content, adjust if needed */
+  opacity: 1;
+  transform: translateY(0); /* Slide down to original position */
 }/*# sourceMappingURL=collapse.css.map */

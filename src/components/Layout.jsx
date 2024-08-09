@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet,NavLink } from "react-router-dom";
 import Logo from "./Logo";
 import "../style/Header.scss";
 import "../index.scss";
@@ -15,22 +15,22 @@ export default function Layout() {
         <nav aria-label="Menu principal">
           <ul className="nav">
             <li className="nav__item">
-              <Link
+              <NavLink
                 to="/"
                 aria-label="Revenir à l'accueil"
                 className="nav__link"
               >
                 Accueil
-              </Link>
+              </NavLink>
             </li>
             <li className="nav__item">
-              <Link
+              <NavLink
                 to="/about"
                 aria-label="aller à la page à propos"
                 className="nav__link"
               >
                 A propos
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>

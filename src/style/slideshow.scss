@@ -59,6 +59,12 @@
             transform: scale3d(1.1, 1.1, 1);
             filter: drop-shadow(var(--slideshow-text-shadow-hover));
         }
+        @media (max-width: $breakpoint-medium) {
+            width: 4rem;
+        }
+        @media (max-width: $breakpoint-small) {
+            width: 3rem;
+        }
     }
 
     // Specific styles for the previous button
