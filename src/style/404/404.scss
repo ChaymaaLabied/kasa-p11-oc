@@ -1,0 +1,32 @@
+@import "../variables.scss";
+@import "../layout/index.scss";
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-ExtraLarge;
+  height: 100%;
+
+  img {
+    width: min(100%, 36rem);
+    @media (max-width: $breakpoint-medium) {
+      width: 18rem;
+    }
+    @media (max-width: $breakpoint-small) {
+      width: 9rem;
+    }
+  }
+  h1 {
+    @media (max-width: $breakpoint-medium) {
+      font-size: 1rem;
+    }
+    @media (max-width: $breakpoint-small) {
+      font-size: 0.5rem;
+    }
+  }
+  p:hover {
+    text-decoration: underline;
+  }
+}

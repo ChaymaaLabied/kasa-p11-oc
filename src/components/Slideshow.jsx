@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../style/slideshow.scss";
+import "../style/details/slideshow.scss";
 import Chevron from "../components/Chevron";
 
 export default function Slideshow({ pictures }) {

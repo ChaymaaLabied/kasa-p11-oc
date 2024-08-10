@@ -1,7 +1,7 @@
 import React from "react";
 import Collapse from "../components/Collapse";
 import "../style/home/banner.scss";
-import "../style/about.scss"
+import "../style/about/about.scss"
 import aboutBanner from "../assets/home-banner.jpg";
 
 export default function About() {
@@ -19,7 +19,7 @@ export default function About() {
     {
       title: "Service",
       content:
-        "Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N'hésitez pas à nous contacter si vous avez la moindre question.",
+        "La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entrainera une exclusion de notre plateforme.",
     },
     {
       title: "Sécurité",

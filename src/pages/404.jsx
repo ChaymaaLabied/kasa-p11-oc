@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import error404 from "../assets/404.svg";
-import "../style/404.scss";
+import "../style/404/404.scss";
 
 export default function NotFound() {
   return (

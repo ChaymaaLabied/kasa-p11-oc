@@ -13,10 +13,6 @@ export default function Router() {
       path: "/",
       element: <Layout />,
       children: [
-        // {
-        //   path: "/",
-        //   element: <Home />,
-        // },
         {
           path: "/about",
           element: <About />,
@@ -37,10 +33,6 @@ export default function Router() {
         },
       ],
     },
-    // {
-    //   path: "*",
-    //   element: <NotFound />,
-    // },
   ]);
 
   return <RouterProvider router={router} />;

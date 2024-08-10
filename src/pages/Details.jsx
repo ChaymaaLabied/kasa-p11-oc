@@ -3,26 +3,12 @@ import { useLoaderData } from "react-router-dom";
 import Collapse from "../components/Collapse";
 import Slideshow from "../components/Slideshow";
 import Rating from "../components/StarRating";
-import "../style/details.scss";
-import "../style/person.scss";
+import "../style/details/details.scss";
+import "../style/details/person.scss";
 
 
 export default function Details() {
   const { logement } = useLoaderData();
-
-
-  // useEffect(() => {
-  //   fetch("../data/logements.json")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       const logement = data.find((elt) => elt.id === id);
-  //       if (!logement) {
-  //         throw new Error("Property not found");
-  //       }
-  //       setLogementData(logement);
-  //     })
-  //     .catch((error) => console.error("Error fetching data:", error));
-  // }, [id]);
 
   return (
     <div className="details">

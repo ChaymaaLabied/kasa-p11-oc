@@ -1,9 +1,9 @@
 import React from "react";
 import { Link, Outlet,NavLink } from "react-router-dom";
 import Logo from "./Logo";
-import "../style/Header.scss";
-import "../index.scss";
-import '../style/footer.scss'
+import "../style/layout/Header.scss";
+import "../style/layout/index.scss";
+import '../style/layout/footer.scss'
 
 export default function Layout() {
   return (
