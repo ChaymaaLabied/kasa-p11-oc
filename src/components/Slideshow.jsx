@@ -6,20 +6,23 @@ export default function Slideshow({ pictures }) {
   const [pictureIndex, setPictureIndex] = useState(0);
 
   const goToNext = () => {
-    setPictureIndex(
-      pictures.length === pictureIndex + 1 ? 0 : pictureIndex + 1
-    );
+    setPictureIndex(pictures.length === pictureIndex + 1 ? 0 : pictureIndex + 1);
   };
 
   const goToPrevious = () => {
-    setPictureIndex(
-      pictureIndex - 1 < 0 ? pictures.length - 1 : pictureIndex - 1
-    );
+    setPictureIndex(pictureIndex - 1 < 0 ? pictures.length - 1 : pictureIndex - 1);
   };
 
   return (
     <div className="slideshow">
-      <img src={pictures[pictureIndex]} alt="" className="slideshow__image" />
+      {pictures.map((picture, index) => (
+        <img
+          key={index}
+          src={picture}
+          alt=""
+          className={`slideshow__image ${index === pictureIndex ? 'visible' : ''}`}
+        />
+      ))}
       {pictures.length > 1 && (
         <div className="slideshow__nav">
           <button
@@ -34,11 +37,11 @@ export default function Slideshow({ pictures }) {
             className="slideshow__nav-next"
             aria-label="next"
           >
-           <Chevron direction="right" />
+            <Chevron direction="right" />
           </button>
-          <div className="slideshow__pagination">{`${pictureIndex + 1}/${
-            pictures.length
-          }`}</div>
+          <div className="slideshow__pagination">
+            {`${pictureIndex + 1}/${pictures.length}`}
+          </div>
         </div>
       )}
     </div>
