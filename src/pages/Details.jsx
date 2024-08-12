@@ -6,7 +6,6 @@ import Rating from "../components/StarRating";
 import "../style/details/details.scss";
 import "../style/details/person.scss";
 
-
 export default function Details() {
   const { logement } = useLoaderData();
 
@@ -28,7 +27,7 @@ export default function Details() {
               </ul>
             </hgroup>
             <aside className="details__infos">
-            <Rating score={logement.rating} activeColor="#ff6060" />
+              <Rating score={logement.rating} activeColor="#ff6060" />
               <figure className="person">
                 {" "}
                 <img
@@ -44,10 +43,19 @@ export default function Details() {
           </section>
 
           <div className="details__collapse">
-            <Collapse title="Description" content={logement.description} />
+            <Collapse
+              title="Description"
+              content={<p>{logement.description}</p>}
+            />
             <Collapse
               title="Equipements"
-              content={logement.equipments.join("\r")}
+              content={
+                <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
+                  {logement.equipments.map((equipment, index) => (
+                    <li key={index}>{equipment}</li>
+                  ))}
+                </ul>
+              }
             />
           </div>
         </>
